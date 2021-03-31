@@ -1,0 +1,83 @@
+<template>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Hello Vue 3 + Vite" />
+</template>
+
+<script setup>
+import HelloWorld from './components/HelloWorld.vue'
+
+// This starter template is using Vue 3 experimental <script setup> SFCs
+// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+</script>
+
+<style>
+/* Our default values set for mobile */
+:root {
+  --color-bg: #FFFFA0;
+  --color-text-main: #2800FF;
+  --color-primary: #AFECE0;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+
+}
+
+/* Tablet portrait */
+@media (min-width: 768px) {
+  :root {
+    --wrapper-height: 87vh;
+    --image-max-width: 400px;
+    --image-margin: 5rem;
+  }
+}
+
+/* Tablet Landscape */
+@media (min-width: 1024px) {
+  :root {
+    --wrapper-height: 87vh;
+    --image-max-width: 500px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+  :root {
+    --wrapper-height: 87vh;
+    --image-max-width: 500px;
+  }
+}
+
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FHKGrotesk-Regular.otf?v=1602782380076")
+    format("opentype");
+}
+
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FHKGrotesk-Bold.otf?v=1602782484249")
+    format("opentype");
+}
+
+body {
+  font-family: HK Grotesk;
+  background-color: var(--color-bg);
+}
+
+  .wrapper {
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  margin-left: 2rem;
+  margin-top: 3rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+  
+</style>
