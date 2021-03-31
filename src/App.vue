@@ -1,6 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <router-view />
 </template>
 
 <script setup>
@@ -65,7 +64,7 @@ body {
   background-color: var(--color-bg);
 }
 
-  .wrapper {
+.wrapper {
   min-height: var(--wrapper-height);
   display: grid;
   place-items: center;
@@ -78,6 +77,18 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+  
+a:not(.btn--remix):link,
+a:not(.btn--remix):visited {
+  text-decoration: none;
+  border-bottom: 6px solid var(--color-primary);
+  color: var(--foreground);
+  transition: background 0.2s linear;
+}
+
+a:hover {
+  background: var(--color-primary);
 }
   
 </style>
