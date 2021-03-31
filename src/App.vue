@@ -1,5 +1,18 @@
 <template>
-  <router-view />
+  <div class="wrapper">
+    <div class="content">
+      <img alt="Vue logo" src="./assets/logo.png" />
+      <HelloWorld msg="Hello Glitch + Vue 3" />
+    </div>
+    <footer class="footer">
+      <a className="btn--remix"
+          href="https://glitch.com/edit/#!/remix/glitch-hello-react"
+        >
+          <img src="https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576" alt="Glitch logo" />
+          Remix on Glitch
+        </a>
+    </footer>
+  </div>
 </template>
 
 <script setup>
