@@ -7,11 +7,11 @@
       <p class="description">
         This is a Glitch Vue starter, and it's completely customizable on Glitch!
         
-        <br />
+        <br /><br />
         
         This starter runs a Vue SPA (Single Page Application) using Vite without any routing. For routing, <a href="https://router.vuejs.org/">vue-router</a> is suggested.
         
-        <br />
+        <br /><br />
         
         While you're in the editor working, Glitch is running your start script in the background (vite dev). The site will be in dev mode and you'll see your changes happen immediately in the preview window. Once you close the editor window and your app goes to sleep, Glitch runs the build script and Vite builds your app for modern browsers.  
       </p>
@@ -139,6 +139,7 @@ a:hover {
   border-radius: 4px;
   color: #000;
   text-decoration: none;
+  vertical-align: middle;
 }
 
 .btn--remix:hover {
@@ -168,6 +169,7 @@ a:hover {
   margin: 0 auto;
   padding-top: 1rem;
   width: 100%;
+  vertical-align: middle;
 }
 
 .footer a:not(.btn--remix):link,
@@ -179,6 +181,10 @@ a:hover {
   color: #000;
   text-decoration: none;
   border-style: none;
+}
+  
+.footer .links {
+  padding: .5rem 1rem;
 }
 
 p {
