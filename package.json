@@ -19,6 +19,7 @@
     "node": "12.x"
   },
   "glitch": {
-    "projectType": "generated_static"
+    "projectType": "generated_static",
+    "buildDirectory": "build"
   }
 }
