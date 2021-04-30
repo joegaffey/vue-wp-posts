@@ -9,7 +9,7 @@
         
         <br /><br />
         
-        This starter runs a Vue SPA (Single Page Application) using Vite without any routing. For routing, <a href="https://router.vuejs.org/">vue-router</a> is suggested.
+        This starter runs a Vue SPA (Single Page Application) using Vite without any routing. For routing, remix <a href="https://glitch.com/edit/#!/remix/glitch-hello-vue-router">glitch-hello-vue-router</a>.
         
         <br /><br />
         
@@ -48,7 +48,6 @@ import HelloWorld from './components/HelloWorld.vue'
   --wrapper-height: 87vh;
   --image-max-width: 300px;
   --image-margin: 3rem;
-
 }
 
 /* Tablet portrait */
