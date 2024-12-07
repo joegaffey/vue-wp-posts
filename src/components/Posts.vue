@@ -1,11 +1,5 @@
 <template>
 
-<!-- <form class="form" on:submit={handleSubmit}>
-  <label for="input">Enter WordPress URL:</label>
-  <input id="input" type="url" bind:value={wordpressUrl} required />
-  <button type="submit">Submit</button>
-</form> -->
-
   <form @submit.prevent="submitForm">
     <label for="name">Enter WordPress URL:</label>
     <input type="text" id="name" v-model="name" placeholder="" />
@@ -33,6 +27,8 @@ export default {
   data() {
     return {
       posts: [],
+      submitted: false,
+      name: null,
       loading: true,
       error: null,
     }
@@ -42,25 +38,28 @@ export default {
   },
   methods: {
     submitForm() {
-      this.submitted = true; // Mark the form as submitted
-      console.log("Submitted name:", this.name); // Log the value
+      this.submitted = true;
+      this.fetchPosts();
     },
     async fetchPosts() {
       
-    let wordpressUrl = this.name;
-      
-    if (!wordpressUrl || wordpressUrl.length < 5) 
-      return;
+      let wordpressUrl = this.name;
 
-    try {
-      const response = await fetch(`${wordpressUrl}/wp-json/wp/v2/posts`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (!wordpressUrl || wordpressUrl.length < 5) {
+        this.loading = false;
+        return;
       }
-      this.posts = await response.json();
-    } catch (err) {
-      error = err.message;
-    } finally {
+
+      try {
+        const response = await fetch(`${wordpressUrl}/wp-json/wp/v2/posts`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        this.posts = await response.json();
+      } catch (err) {
+        error = err.message;
+    } 
+    finally {
       loading = false;
     }
   },
