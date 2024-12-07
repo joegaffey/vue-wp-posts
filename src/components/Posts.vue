@@ -7,13 +7,13 @@
 </form> -->
 
   <form @submit.prevent="submitForm">
-      <label for="name">Enter WordPress URL:</label>
-      <input type="text" id="name" v-model="name" placeholder="" />
+    <label for="name">Enter WordPress URL:</label>
+    <input type="text" id="name" v-model="name" placeholder="" />
 
-      <button type="submit">Submit</button>
-    </form>
+    <button type="submit">Submit</button>
+  </form>
 
-  <div class="post-list">
+  <div v-if="submitted" class="post-list">
     <h2>Latest Posts</h2>
     <div v-if="loading">Loading...</div>
     <div v-if="error" class="error">{{ error }}</div>
@@ -29,8 +29,6 @@
 
 <script>
   
-const wordpressUrl = 'https://www.labiotech.eu/';
-
 export default {
   data() {
     return {
@@ -43,8 +41,16 @@ export default {
     this.fetchPosts()
   },
   methods: {
+    submitForm() {
+      this.submitted = true; // Mark the form as submitted
+      console.log("Submitted name:", this.name); // Log the value
+    },
     async fetchPosts() {
-    if (!wordpressUrl) return;
+      
+    let wordpressUrl = this.name;
+      
+    if (!wordpressUrl || wordpressUrl.length < 5) 
+      return;
 
     try {
       const response = await fetch(`${wordpressUrl}/wp-json/wp/v2/posts`);
